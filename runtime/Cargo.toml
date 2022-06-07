@@ -13,6 +13,8 @@ repository = "https://github.com/substrate-developer-hub/substrate-node-template
 targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
+pallet-scheduler = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.23" }
+
 pallet-node-authorization = { default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.23" }
 
 codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = ["derive"] }
@@ -89,6 +91,7 @@ std = [
 	"sp-transaction-pool/std",
 	"sp-version/std",
 	'pallet-node-authorization/std',
+	'pallet-scheduler/std',
 ]
 runtime-benchmarks = [
 	"frame-benchmarking/runtime-benchmarks",
