@@ -37,7 +37,7 @@ pub fn authority_keys_from_seed(s: &str) -> (AuraId, GrandpaId) {
 }
 
 pub fn development_config() -> Result<ChainSpec, String> {
-	let wasm_binary = WASM_BINARY.ok_or_else(|| "Development wasm not available".to_string())?;
+	let wasm_binary = WASM_BINARY.unwrap_or(&[] as &[u8]);
 
 	Ok(ChainSpec::from_genesis(
 		// Name
